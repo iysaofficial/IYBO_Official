@@ -57,7 +57,7 @@ const ListOfWinnerDetail2025Comp = () => {
                         <i className="fa-solid fa-bars"></i>
                     </div>
                     <div className="content">
-                        <h2>Kurasi</h2>
+                        <h2>Curation</h2>
                         <br />
                         <Link href="https://drive.google.com/drive/folders/1OtPQULlba4DFS5OeiOUkLvSDELngdHpc?usp=sharing" target="_blank" className="low-detail-document-button">Download</Link>
                     </div>

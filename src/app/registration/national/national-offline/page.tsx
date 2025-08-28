@@ -1,7 +1,6 @@
 "use client";
 import '@/assets/css/registration/RegistrationDetail.css'
 import NationalOfflineComp from '@/components/registration/national/NationalOfflineComp'
-
 const NationalOfflinePage = () =>{
     return(
         <>

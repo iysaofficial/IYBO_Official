@@ -5,7 +5,7 @@ interface FormState {
   selectedMaxProject: string;
 }
 
-const NationalOnlineComp: React.FC = () => {
+const NationalOfflineComp: React.FC = () => {
   const [formState, setFormState] = useState<FormState>({
     selectedMaxNamaLengkap: "",
     selectedMaxProject: ""
@@ -465,4 +465,4 @@ const InformasiUmumSection: React.FC = () => (
   </section>
 );
 
-export default NationalOnlineComp;
+export default NationalOfflineComp;

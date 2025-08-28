@@ -172,7 +172,7 @@ const InstructionSection: React.FC = () => (
         <p className="instruction-text">
           Akan ada email informasi bahwa pendaftaran telah diterima yang dikirimkan ke alamat email ketua tim, 
           dan berkas akan divalidasi oleh tim kami. Mohon bersabar dan tunggu maksimal 3 hari setelah waktu pendaftaran, 
-          Letter of Acceptance (LOA) akan dikirimkan ke alamat email team leader.
+          Letter of Acceptance (LOA) akan dikirimkan ke alamat email ketua tim.
         </p>
       </div>
     </div>
@@ -216,7 +216,6 @@ const BiodataSection: React.FC<BiodataSectionProps> = ({
         <select name="KATEGORI_KOMPETISI" className="select-field" required>
           <option value="">--Pilih Kategori Kompetisi--</option>
           <option value="Online Competition">Online Competition</option>
-          <option value="Offline Competition">Offline Competition</option>
         </select>
       </div>
     </div>

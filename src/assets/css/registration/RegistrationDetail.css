@@ -19,7 +19,7 @@ body {
 
 /* Header Section */
 .header-section {
-    background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+    background: linear-gradient(135deg, #2f7b0c 0%, #cef43c 100%);
     color: white;
     padding: 4rem 2rem;
     text-align: center;
@@ -88,7 +88,7 @@ body {
 .instruction-number {
     width: 32px;
     height: 32px;
-    background-color: #3b82f6;
+    background-color: #2f7b0c;
     color: white;
     border-radius: 50%;
     display: flex;
@@ -127,7 +127,7 @@ body {
 .section-title {
     font-size: 1.75rem;
     font-weight: bold;
-    color: #1e40af;
+    color: #2f7b0c;
     margin: 0 0 1rem 0;
 }
 
@@ -237,7 +237,7 @@ body {
 }
 
 .submit-button {
-    background-color: #1e40af;
+    background-color: #2f7b0c;
     color: white;
     padding: 1rem 3rem;
     font-size: 1.125rem;
@@ -252,7 +252,7 @@ body {
 }
 
 .submit-button:hover {
-    background-color: #1e3a8a;
+    background-color: #cef43c;
     transform: translateY(-2px);
     box-shadow: 0 6px 16px rgba(30, 64, 175, 0.4);
 }

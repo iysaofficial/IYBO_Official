@@ -3,16 +3,20 @@ import Link from "next/link"
 const HomeRegistrationComp = () =>{
     return(
         <>
-        <section className="">
-            <div className="">
-            <div className="">
-                <h2 className="">REGISTRATION FORM</h2>
-                <h3 className="">Choose Categories Participant for Registration IYBO 2026</h3>
+        <section className="registration-section">
+            <div className="registration-container">
+            <div className="registration-header">
+                <h2 className="registration-title">REGISTRATION FORM</h2>
+                <h3 className="registration-subtitle">Choose Categories Participant for Registration IYBO 2026</h3>
             </div>
             </div>
-            <div className="">
-                <Link href="/registration/international" className="">International Participant</Link>
-                <Link href="/registration/national" className="">Indonesian Participant</Link>
+            <div className="registration-links">
+            <Link href="/registration/international" className="registration-link">
+                International Participant
+            </Link>
+            <Link href="/registration/national" className="registration-link">
+                Indonesian Participant
+            </Link>
             </div>
         </section>
         </>

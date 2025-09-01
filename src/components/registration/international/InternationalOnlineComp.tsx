@@ -12,7 +12,6 @@ const InternationalOnlineComp: React.FC = () => {
   });
   
   const maxNameChars = 180;
-  const maxProjectChars = 160;
 
   const handleInputNameChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     const { value } = e.target;
@@ -26,7 +25,7 @@ const InternationalOnlineComp: React.FC = () => {
 
   useEffect(() => {
     const scriptURL =
-      "https://script.google.com/macros/s/AKfycbzjN7qKWZzVh9me1c97QtP1iJEnshAizXITnoG24hH6wmmYxB2VKeLx89nrba0FzoDuqA/exec";
+      "https://script.google.com/macros/s/AKfycby6Ds0B2LmefalmBVg3E41XZhqYCm81WNK1AsNapZ5pb2-9CduJykvvvDt9x6KO3KEh/exec";
 
     const form = document.forms.namedItem("regist-form");
     let buttonCounter = 0;
@@ -43,7 +42,7 @@ const InternationalOnlineComp: React.FC = () => {
             // Disable button and show loading state
             if (submitButton) {
               submitButton.disabled = true;
-              submitButton.textContent = 'MENGIRIM...';
+              submitButton.textContent = 'SENDING...';
               submitButton.style.backgroundColor = '#6b7280';
             }
             
@@ -54,22 +53,22 @@ const InternationalOnlineComp: React.FC = () => {
             
             // Success state
             if (submitButton) {
-              submitButton.textContent = 'BERHASIL DIKIRIM!';
+              submitButton.textContent = 'SUCCESSFULLY SENT!';
               submitButton.style.backgroundColor = '#10b981';
             }
             
             // Redirect after 2 seconds
             setTimeout(() => {
-              window.location.href = "/";
+              window.location.href = "/registration/success";
             }, 2000);
             
           } catch (error) {
-            console.error("Error saat mengirim data:", error);
+            console.error("Error while sending data:", error);
             
             // Error state
             const submitButton = form.querySelector('.submit-button') as HTMLButtonElement;
             if (submitButton) {
-              submitButton.textContent = 'GAGAL DIKIRIM - COBA LAGI';
+              submitButton.textContent = 'FAILED TO SEND - TRY AGAIN';
               submitButton.style.backgroundColor = '#ef4444';
               submitButton.disabled = false;
             }
@@ -123,6 +122,8 @@ const InternationalOnlineComp: React.FC = () => {
           {/* INFORMASI UMUM SECTION */}
           <InformasiUmumSection />
 
+          <input type="hidden" name="PRICE" value="Rp. 300.000" readOnly />
+
           {/* Submit Button */}
           <div className="submit-container">
             <button type="submit" className="submit-button">
@@ -150,19 +151,19 @@ const HeaderSection: React.FC = () => (
 const InstructionSection: React.FC = () => (
   <div className="instruction-section">
     <h3 className="instruction-title">
-      HELLO IYBO 2025 PARTICIPANTS, Please consider the following information before filling out the registration form :
+      HELLO IYBO 2026 PARTICIPANTS, Please consider the following information before filling out the registration form :
     </h3>
     <div className="instruction-list">
       <div className="instruction-item">
         <span className="instruction-number">1</span>
         <p className="instruction-text">
-        Please fill in the required data correctly and ensure there are no writing errors. Also make sure that the data submitted is final and has not changed.
+          Please fill in the required data correctly and ensure there are no writing errors. Also make sure that the data submitted is final and has not changed.
         </p>
       </div>
       <div className="instruction-item">
         <span className="instruction-number">2</span>
         <p className="instruction-text">
-          After making sure the data is correct, you can click <strong>SUBMIT FORM</strong> button once. If the data has been successfully submitted, you will be moved to another page.
+          After making sure the data is correct, you can click <strong>SUBMIT REGISTRATION</strong> button once. If the data has been successfully submitted, you will be moved to another page.
         </p>
       </div>
       <div className="instruction-item">
@@ -220,23 +221,23 @@ const BiodataSection: React.FC<BiodataSectionProps> = ({
       <div className="field-group">
         <label className="field-label">Name of Leader & Member Team</label>
         <div className="field-note">
-          <p>Input the name of the team leader and team members with the team leaders name at the beginning, with the following format:</p>
+          <p>Enter the name of the team leader and team members with the team leaders name at the beginning, with the following format:</p>
           <p><strong>Note:</strong> maximum 1 members + 1 team leader</p>
           <div className="example-box">
-            <div>Kamal Putra</div>
+            <div>Kamal Putra Ramadhan</div>
             <div>Ranu Ramadhan</div>
           </div>
         </div>
         <textarea
           name="FULL_NAME"
           className="textarea-field"
-          placeholder="Input Name of Leader & Member Team"
+          placeholder="Enter Name of Leader & Member Team"
           required
           value={selectedMaxNamaLengkap}
           onChange={handleInputNameChange}
         />
         <div className="char-counter" style={{ color: charCounterColor }}>
-          {selectedMaxNamaLengkap.length} / {maxNameChars} karakter
+          {selectedMaxNamaLengkap.length} / {maxNameChars} Character
         </div>
       </div>
 
@@ -447,13 +448,13 @@ const BiodataSection: React.FC<BiodataSectionProps> = ({
         <label className="field-label">Leader WhatsApp Number</label>
         <div className="field-note">
           <p>Please write with phone code, example : (phone code) (your number) +62 8177091xxxx</p>
-          <p><strong>Notes:</strong> Please fill in the team leader's number correctly to be added to the WhatsApp Group.</p>
+          <p><strong>Notes:</strong> Please fill in the team leaders number correctly to be added to the WhatsApp Group.</p>
         </div>
         <input
           type="number"
           name="LEADER_WHATSAPP"
           className="input-field"
-          placeholder="Input Leader WhatsApp Number"
+          placeholder="Enter Your Leader WhatsApp Number"
           required
         />
       </div>
@@ -467,7 +468,7 @@ const BiodataSection: React.FC<BiodataSectionProps> = ({
           type="email"
           name="LEADER_EMAIL"
           className="input-field"
-          placeholder="Input Your Leader Email Address"
+          placeholder="Enter Your Leader Email Address"
           required
         />
       </div>
@@ -489,52 +490,37 @@ const DataSekolahSection: React.FC = () => (
         <div className="field-note">
           <p><strong>Notes:</strong> If the members are not in the same institution, enter the name of the school with the format in the order of the name of the team leader and team members from each school, with the following format:</p>
           <div className="example-box">
-            <div>SMA CERIA</div>
-            <div>HAPPY SENIOR HIGH SCHOOL</div>
+            <div>Bina Senior High School</div>
+            <div>Happy Senior High School</div>
           </div>
         </div>
         <textarea
           name="SCHOOL_NAME"
           className="textarea-field"
-          placeholder="Input School Name of Leader & Member Team"
+          placeholder="Enter School Name of Leader & Member Team"
           required
         />
       </div>
 
-      <div className="field-group">
-        <label className="field-label">Nomor Pokok Sekolah Nasional (NPSN)</label>
-        <div className="field-note">
-          <p><strong>Notes:</strong> Masukan NPSN jika masih bersekolah dengan sesuai urutan nama ketua dan anggota tim, dengan format seperti berikut:</p>
-          <div className="example-box">
-            <div>1201301</div>
-            <div>1302402</div>
-          </div>
-        </div>
-        <textarea
-          name="NPSN"
-          className="textarea-field"
-          placeholder="Masukan Nomor Pokok Sekolah Nasional (NPSN)"
-        />
-      </div>
     </div>
 
     <div className="field-grid">
       <div className="field-group">
-        <label className="field-label">Jenjang Pendidikan</label>
-        <select name="JENJANG_PENDIDIKAN" className="select-field" required>
-          <option value="">--Pilih Jenjang Pendidikan Anda--</option>
-          <option value="Sekolah Menengah Atas">Sekolah Menengah Atas</option>
-          <option value="Universitas">Universitas</option>
+        <label className="field-label">Educational Level</label>
+        <select name="EDUCATIONAL_LEVEL" className="select-field" required>
+          <option value="">--Choose Your Educational Level--</option>
+          <option value="Senior High School">Senior High School</option>
+          <option value="University">University</option>
         </select>
       </div>
 
       <div className="field-group">
-        <label className="field-label">Provinsi</label>
+        <label className="field-label">Country</label>
         <input
           type="text"
-          name="PROVINSI"
+          name="COUNTRY"
           className="input-field"
-          placeholder="Masukan Provinsi Anda"
+          placeholder="Input Your Country"
           required
         />
       </div>
@@ -546,42 +532,42 @@ const DataSekolahSection: React.FC = () => (
 const DataPembimbingSection: React.FC = () => (
   <section className="form-section">
     <div className="section-header">
-      <h2 className="section-title">DATA PEMBIMBING</h2>
+      <h2 className="section-title">SUPERVISOR DATA</h2>
       <div className="section-underline"></div>
     </div>
 
     <div className="field-grid">
       <div className="field-group">
-        <label className="field-label">Nama Guru/Pembimbing</label>
+        <label className="field-label">Name of Teacher/Supervisor</label>
         <textarea
-          name="NAMA_PEMBIMBING"
+          name="SUPERVISOR_NAME"
           className="textarea-field"
-          placeholder="Masukan Nama Guru/Pembimbing"
+          placeholder="Enter Your Teacher/Supervisor Name"
           required
         />
       </div>
 
       <div className="field-group">
-        <label className="field-label">Nomor WhatsApp Guru/Pembimbing</label>
+        <label className="field-label">Teacher/Supervisor WhatsApp Number</label>
         <div className="field-note">
-          <p>Harap tulis dengan kode telepon, contoh: (kode negara) (nomor telepon) +62 81770914xxx</p>
+          <p>Please write with phone code, example : (phone code) (your number) +62 8177091xxxx</p>
         </div>
         <input
-          type="tel"
-          name="WHATSAPP_PEMBIMBING"
+          type="number"
+          name="SUPERVISOR_WHATSAPP_NUMBER"
           className="input-field"
-          placeholder="Masukan Nomor WhatsApp Guru/Pembimbing"
+          placeholder="Enter Your Teacher/Supervisor WhatsApp Number"
           required
         />
       </div>
 
       <div className="field-group">
-        <label className="field-label">Alamat Email Guru/Pembimbing</label>
+        <label className="field-label">Teacher/Supervisor Email Address</label>
         <input
           type="email"
-          name="EMAIL_PEMBIMBING"
+          name="SUPERVISOR_EMAIL"
           className="input-field"
-          placeholder="Alamat Email Guru/Pembimbing"
+          placeholder="Enter Your Teacher/Supervisor Email Address"
           required
         />
       </div>
@@ -593,52 +579,55 @@ const DataPembimbingSection: React.FC = () => (
 const InformasiUmumSection: React.FC = () => (
   <section className="form-section">
     <div className="section-header">
-      <h2 className="section-title">INFORMASI UMUM</h2>
+      <h2 className="section-title">GENERAL INFORMATION</h2>
       <div className="section-underline"></div>
     </div>
 
     <div className="field-grid">
       <div className="field-group">
-        <label className="field-label">Alamat Lengkap</label>
+        <label className="field-label">Social Media</label>
         <div className="field-note">
-          <p>Mohon tuliskan alamat lengkap (Nama Jalan, Nomor Rumah, RT & RW, Kecamatan, Kabupaten, Kota, Provinsi, Kode Pos)</p>
+          <p>If you dont have whatsapp number, please write down your social media account. (Ex: Instagram/FB/Telegram/Line)</p>
+          <div className="example-box">
+            <div>https://www.instagram.com/iicyms_official/</div>
+            <div>iysa_official</div>
+          </div>
         </div>
         <textarea
-          name="ALAMAT"
+          name="SOSMED"
           className="textarea-field"
-          placeholder="Masukan Alamat Lengkap Anda"
+          placeholder="Enter Your Social Media Account"
           required
         />
       </div>
 
       <div className="field-group">
-        <label className="field-label">Sumber Informasi Kompetisi IYBO 2025</label>
-        <select name="SUMBER_INFORMASI" className="select-field" required>
-          <option value="">--Pilih Sumber Informasi--</option>
+        <label className="field-label">IYBO 2026 Competition Information Resources</label>
+        <select name="INFORMATION_RESOURCES" className="select-field" required>
+          <option value="">--Choose Information Resources--</option>
           <option value="IYSA Instagram">IYSA Instagram</option>
           <option value="IYBO Instagram">IYBO Instagram</option>
-          <option value="Pembimbing/Sekolah">Pembimbing/Sekolah</option>
+          <option value="Supervisor/School">Supervisor/School</option>
           <option value="IYSA FaceBook">IYSA FaceBook</option>
           <option value="IYSA Linkedin">IYSA Linkedin</option>
           <option value="IYSA Website">IYSA Website</option>
           <option value="IYBO Website">IYBO Website</option>
           <option value="IYSA Email">IYSA Email</option>
           <option value="IYBO Email">IYBO Email</option>
-          <option value="Acara Sebelumnya">Acara Sebelumnya</option>
-          <option value="Lainnya">Lainnya</option>
+          <option value="Previous Event">Previous Event</option>
+          <option value="Etc">Etc</option>
         </select>
       </div>
 
       <div className="field-group">
         <label className="field-label">
-          Jika Anda mendapatkan pendaftaran gratis dari acara sebelumnya atau kegiatan kunjungan sekolah sebelumnya, 
-          harap lampirkan bukti dokumentasi
+          If you received free registration from a previous event or school visit, please attach documentary proof.
         </label>
         <input
           type="url"
           name="FILE"
           className="input-field"
-          placeholder="Upload Link File Drive"
+          placeholder="Upload The Link Of The Drive File"
         />
       </div>
     </div>

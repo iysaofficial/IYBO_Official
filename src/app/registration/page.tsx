@@ -1,21 +1,9 @@
-import '@/assets/css/after event/List of Winner.css'
+import '@/assets/css/registration/HomeRegistration.css'
 import HomeRegistration from '@/components/registration/HomeRegistrationComp'
 
 const HomeRegistrationPage = () =>{
     return(
         <>
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
         <HomeRegistration></HomeRegistration>
         </>
     )

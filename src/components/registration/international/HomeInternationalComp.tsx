@@ -3,16 +3,16 @@ import Link from "next/link"
 const HomeInternationalComp = () =>{
     return(
         <>
-        <section className="homeregist-section">
-            <div className="wrapper">
-            <div className="">
-                <h2 className="">REGISTRATION FORM FOR INTERNATIONAL PARTICIPANTS</h2>
-                <h3 className="">Choose Categories Competition for Registration IYBO 2026</h3>
+        <section className="registration-section">
+            <div className="registration-container">
+            <div className="registration-header">
+                <h2 className="registration-title">REGISTRATION FORM FOR INTERNATIONAL PARTICIPANTS</h2>
+                <h3 className="registration-subtitle">Choose Categories Competition for Registration IYBO 2026</h3>
             </div>
             </div>
-            <div className="wrapper">
-                <Link href="/registration/international/international-offline" className="">Offline</Link>
-                <Link href="/registration/international/international-online" className="">Online</Link>
+            <div className="registration-links">
+            <Link href="/registration/international/international-offline" className="registration-link">Offline Competition</Link>
+            <Link href="/registration/international/international-online" className="registration-link">Online Competition</Link>
             </div>
         </section>
         </>

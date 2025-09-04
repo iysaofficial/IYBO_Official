@@ -63,6 +63,7 @@ const ContactComp = () =>{
                         <div className="topic-text">Send us a message</div>
                         {/* <p>If you have any work from me or any types of quries related to my tutorial, you can send me message from here. it's my pleasure to help you.</p> */}
                         <form action="" method="POST" name="home-contact">
+                            <input type="hidden" name="Event" value="IYBO" readOnly />
                             <div className="input-box">
                                 <input type="text" name="Name" placeholder="Enter your name"/>
                             </div>

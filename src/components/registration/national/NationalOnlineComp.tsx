@@ -25,7 +25,7 @@ const NationalOnlineComp: React.FC = () => {
 
   useEffect(() => {
     const scriptURL =
-      "";
+      "https://script.google.com/macros/s/AKfycbwTb_ghxyEoYb5XJmQcTvdTakeEXumat6ZPpLP_GbedcxHbBAjBzcgTMw4V-kmbaEDwSg/exec";
 
     const form = document.forms.namedItem("regist-form");
     let buttonCounter = 0;

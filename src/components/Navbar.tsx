@@ -103,7 +103,7 @@ const NavbarComp = () =>{
                         <Link href="/#about">About</Link>
                     </li>
                     <li className='menu-item'>
-                        <Link href="https://drive.google.com/file/d/17FZEkYb33M7KDx6iL5PcqhwJ9wtiPIDa/view?usp=sharing" 
+                        <Link href="https://drive.google.com/file/d/1V35vePN3MMYrV2v6ewbmW1pdqQ6nBj5w/view?usp=sharing" 
                             target='_blank'
                             rel="noopener noreferrer">
                             Guide Book

@@ -1,12 +1,15 @@
 import '@/assets/css/registration/HomeRegistration.css'
-import HomeRegistration from '@/components/registration/HomeRegistrationComp'
+import { redirect } from 'next/navigation';
+// import HomeRegistrationComp from '@/components/registration/HomeRegistrationComp'
 
 const HomeRegistrationPage = () =>{
-    return(
-        <>
-        <HomeRegistration></HomeRegistration>
-        </>
-    )
+    redirect('/');
+    return null;
+    // return(
+    //     <>
+    //     <HomeRegistrationComp></HomeRegistrationComp>
+    //     </>
+    // )
 }
 
 export default HomeRegistrationPage

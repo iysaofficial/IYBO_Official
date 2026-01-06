@@ -10,7 +10,8 @@ const HeroComp = () =>{
                     <h1>International Youth Biology Olympiad</h1>
                     <p>Registration is now open for the International Youth Biology Olympiad! Join this prestigious event and gain an unforgettable experience!</p>
                     <br />
-                    <Link href="/registration" >Registration</Link>
+                    {/* <Link href="/registration">registrasi</Link> */}
+                    <Link href="/#" className="disabled-link">Registrasi Ditutup</Link>
                 </div>
             </div>
         </section>

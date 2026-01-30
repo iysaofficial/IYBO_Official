@@ -1,12 +1,12 @@
 import '@/assets/css/after event/List Of Winner Detail.css'
 import ListOfWinnerDetailComp from '@/components/after event/ListOfWinnerDetailComp'
 
-const ListOfWinnerDetail2023Page = () =>{
+const ListOfWinnerDetail2026Page = () =>{
     return(
         <>
-        <ListOfWinnerDetailComp year="2023"></ListOfWinnerDetailComp>
+        <ListOfWinnerDetailComp year="2026"></ListOfWinnerDetailComp>
         </>
     )
 }
 
-export default ListOfWinnerDetail2023Page
+export default ListOfWinnerDetail2026Page

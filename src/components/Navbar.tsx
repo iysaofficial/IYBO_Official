@@ -142,6 +142,13 @@ const NavbarComp = () =>{
                         <Link className='sub-btn' href="#">Certificate Supervisor <i className='fas fa-angle-down'></i></Link>
                         <ul className='sub-menu'>
                             <li className='sub-item'>
+                                <Link href="https://drive.google.com/drive/u/0/folders/13VuVZ7KciYbbfBe4ZV0A55nPZrVIW1yr" 
+                                    target='_blank'
+                                    rel="noopener noreferrer">
+                                        Certificate Supervisor 2026
+                                </Link>
+                            </li>
+                            <li className='sub-item'>
                                 <Link href="https://drive.google.com/drive/folders/1vLhW2nU6zY7KoqYhCXUPWuq7GdyPdFqT?usp=sharing" 
                                     target='_blank'
                                     rel="noopener noreferrer">

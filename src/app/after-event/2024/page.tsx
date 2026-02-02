@@ -1,10 +1,10 @@
 import '@/assets/css/after event/List Of Winner Detail.css'
-import ListOfWinnerDetail2024Comp from '@/components/after event/ListOfWinnerDetail2024Comp'
+import ListOfWinnerDetailComp from '@/components/after event/ListOfWinnerDetailComp'
 
 const ListOfWinnerDetail2024Page = () =>{
     return(
         <>
-        <ListOfWinnerDetail2024Comp></ListOfWinnerDetail2024Comp>
+        <ListOfWinnerDetailComp year="2024"></ListOfWinnerDetailComp>
         </>
     )
 }
